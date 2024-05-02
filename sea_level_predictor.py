@@ -19,12 +19,12 @@ def draw_plot():
     lr_fit2 = linregress(df['Year'][df['Year'] >= 2000], df['CSIRO Adjusted Sea Level'][df['Year'] >= 2000])
     x2 = range(2000, 2050+1)
     y2 = lr_fit2.intercept + x2*lr_fit2.slope
+    plt.plot(x2, y2)
 
     # Add labels and title
     plt.title('Rise in Sea Level')
     plt.ylabel('Sea Level (inches)')
     plt.xlabel('Year')
-    plt.plot(x2, y2)
     
     # Save plot and return data for testing (DO NOT MODIFY)
     plt.savefig('sea_level_plot.png')
